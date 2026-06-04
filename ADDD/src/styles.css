@@ -7,9 +7,6 @@
 :root {
     --color-fondo-claro: #F1F5F9; /*Color de fondo*/
     --color-primary: #E4ECE7; /*Fondo principal*/
-    --color-secondary: #05271f; /*Fondo secundario*/
-    --color-tertiary: #0c362d; /*Fondo terciario*/
-    --color-quaternary: #c0d1b2; /*Fondo quaternario*/
     --color-quinary: #425851; /*Fondo quinary*/
     --color-text-title: #2F4858; /*Texto de los títulos*/
     --color-text: #52616B; /*Texto principal*/
@@ -19,6 +16,7 @@
     --color-cards: #ffffff; /*Color de fondo de las tarjetas*/
     --color-boton: #1F4E5F; /*Color de fondo de los botones*/
     --color-boton-2: white; /*Color de fondo de los botones al pasar el mouse*/
+    --color-accent: #598b9c; /*Color de acento para hover*/
     --font-title: "Stack Sans Notch", sans-serif;
     --font--body: "caudex", sans-serif;
     --font-3:"swanky and moo moo", sans-serif;
@@ -28,17 +26,23 @@
     --spacing-md: 16px;
     --spacing-lg: 32px;
     --spacing-xl: 64px;
-    --radius: 8px;
+    --radius: 9px;
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
- /* font-weight: 400; */
     line-height: 1.6;
-    color: var(--color-texto);
+    color: var(--color-text);
+    background-color: var(--color-fondo-claro);
 }
+
+main {
+    padding: 40px 20px;
+    margin: auto;
+
+}
+
 h1, h2, h3 {
- /* font-weight: 700; */
     line-height: 1.2;
 }
 
@@ -48,6 +52,10 @@ h2 {
     font-size: 40px;
     text-shadow: 3px 3px 10px rgba(0,0,0,0.35);
 
+}
+p {
+    color: var(--color-text);
+    font-family: var(--font--body);
 }
 
 .botones{
@@ -63,8 +71,14 @@ h2 {
 
 .botones:hover{
     background-color: #598b9c;
-    transform: scale(1.03);}
+    transform: scale(1.03);
+}
 
+
+
+
+
+/* ===== BARRA DE NAVEGACIÓN ===== */
 nav {
     display: flex;
     justify-content: space-between;
@@ -73,6 +87,7 @@ nav {
     background-color: var(--color-nav);
     padding:0 20px;
 }
+
 .nav-logo {
     color: var(--color-text-logo);
     font-size: 2.5rem;
@@ -94,34 +109,25 @@ nav {
     padding: 0;
     white-space: nowrap;
 }
+
 .nav-links a {
     color: var(--color-text-nav);
     text-decoration: none;
-    font-family: var(--text-nav);
+    font-family: var(--font-nav);
     border-bottom: 2px solid transparent;
     transition: color 0.3s, border-color 0.3s;
 }
+
 .nav-links a:hover {
     color: var(--color-accent);
     border-bottom-color: var(--color-accent);
 }
 
-/*TITULO*/
-.titulo{
-    text-align: center;
-    background-color: var(--color-fondo-claro);
-}
-.titulo h1{
-    font-family: var(--font-title);
-    font-size: 3rem;
-    font-weight: 700;
-    color: rgba(255,255,255,0.95);
-    text-shadow:
-    0 2px 4px rgba(0,0,0,0.25),
-    0 6px 15px rgba(0,0,0,0.15);
-}
 
-/*INICIO*/
+
+
+
+/* ===== INICIO ===== */
 #inicio {
     padding: 10px 20px;
     background-color: var(--color-fondo-claro);
@@ -144,7 +150,6 @@ nav {
     object-fit: cover;
     display: block;
     border-radius: 60px;
-    margin: auto;
     margin-top: 30px;
 }
 
@@ -159,18 +164,16 @@ nav {
 
 .titulo-frontal {
     font-family: var(--font-2);
-    font-size: 2.4rem;
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1.1;
     text-align: start;
     margin-bottom: 35px;
     text-shadow: 3px 3px 10px rgba(0,0,0,0.35);
 }
+
 .boton-inicio {
-    display: flex;
-    justify-self: start;
-    /* color: white; */
-    padding: 8px 32px;
+    display: inline-block;
+    padding: 10px 32px;
     font-size: 18px;
     border-radius: 14px;
     font-weight: 600;
@@ -181,13 +184,15 @@ nav {
 }
 
 
-/*PROBLEMA*/
+
+
+
+/* ===== PROBLEMA ===== */
 .seccion-problema {
     padding: 80px 10%;
     background-color: var(--color-primary);
     border-radius: 60px;
 }
-
 
 .titulo-problema {
     font-size: 40px;
@@ -203,13 +208,14 @@ nav {
 .columna-texto p {
     font-size: 18px;
     line-height: 1.8;
-    color: #475569;
     max-width: 800px;
 }
 
 
-/*PUBLICO OBJETIVO*/
 
+
+
+/* ===== PÚBLICO OBJETIVO ===== */
 .publico_objetivo {
     padding: 80px 10%;
     background-color: var(--color-primary);
@@ -217,7 +223,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    border-radius: 20px;
+    border-radius: 60px;
+    margin: 0 20px;
 }
 .titulo-publico-objetivo {
     font-size: 40px;
@@ -230,14 +237,20 @@ nav {
     flex: 2;
 }
 
+.columna-titulo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: justify;
+    font-weight: normal; ;
+}
+
 .texto-publico p {
     font-size: 1.2rem;
     line-height: 1.6;
     margin: 0;
-    color: var(--color-text);
     text-align: justify;
-    font-weight: bold ;
-    font-family: var(--font--body);
+    font-weight: normal; ;
 }
 
 .imagen-publico {
@@ -254,7 +267,10 @@ nav {
 }
 
 
-/*MODULO AGENDAMIENTO DE CITA*/
+
+
+
+/* ===== MODULO AGENDAMIENTO DE CITA ===== */
 .producto1 {
     display: flex;
     flex-direction: column;
@@ -263,9 +279,6 @@ nav {
     width: 100%;
     background: linear-gradient(to bottom, var(--color-fondo-claro), var(--color-primary));
 }
-
-.
-
 .tabla1 {
     width: 100%;
     max-width: 800px;
@@ -273,12 +286,13 @@ nav {
     background-color: white;
 }
 .tabla1 th {
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-quinary);
     color: white;
     padding: 10px;
 }
 .tabla1 td {
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--color-quinary);
     padding: 10px;
     text-align: center;
 }
@@ -291,14 +305,15 @@ nav {
     color: var(--color-text);
     cursor: pointer;
 }
+
 .formulario1 {
     color: var(--color-text);
     background-color: #ffffff;
     text-align: left;
-    padding: 20px;
+    padding: 25px;
     border-radius: var(--radius);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border: var(--color-secondary) solid 1px;
+    border: var(--color-quinary) solid 1px;
     max-width: 500px;
     width: 100%;
 }
@@ -306,7 +321,7 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: var(--color-secondary);
+    color: var(--color-quinary);
     text-align: center;
 }
 .formulario1 label {
@@ -320,14 +335,14 @@ nav {
     width: 100%;
     padding: 10px;
     margin-bottom: 16px;
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--color-quinary);
     border-radius: var(--radius);
     transition: 0.3s;
 }
 .formulario1 input:focus,
 .formulario1 select:focus,
 #motivo:focus {
-    border-color: var(--color-secondary);
+    border-color: var(--color-quinary);
     outline: none;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
@@ -335,7 +350,7 @@ nav {
     min-height: 100px;
     resize: vertical;
 }
-.boton-inicio {
+.boton-registrar-consulta {
     display: block;
     width: 100%;
     text-align: center;
@@ -345,7 +360,7 @@ nav {
     font-weight: bold;
     transition: 0.3s;
 }
-.boton-inicio:hover {
+.boton-registrar-consulta:hover {
     transform: scale(1.03);
 }
 #mensajeConfirmacion:target {
@@ -354,7 +369,11 @@ nav {
     padding: 10px;
     border-radius: 8px;
 }
-/* ===== SECCIÓN CITA MÉDICA ===== */
+
+
+
+
+/* ===== MODULO CITA MÉDICA ===== */
 
 .producto2{
     width: 100%;
@@ -387,18 +406,13 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
-    background: var(--color-quaternary);
-    color: var(--color-secondary);
-
+    background: var(--color-boton);
+    color: var(--color-boton-2);
     padding: 12px 24px;
-
     border-radius: 40px;
-
     font-family: var(--font-nav);
     font-size: 15px;
     font-weight: bold;
-
     margin-bottom: 25px;
 }
 
@@ -420,14 +434,8 @@ nav {
 .info-cita p{
     font-size: 1.1rem;
     line-height: 1.8;
-
-    color: var(--color-text);
-
-    font-family: var(--font--body);
     font-weight: bold;
-
     text-align: justify;
-
     margin-bottom: 40px;
 }
 
@@ -443,57 +451,42 @@ nav {
     display: flex;
     align-items: center;
     gap: 18px;
-
     background: var(--color-cards);
-
     padding: 20px;
-
     border-radius: 20px;
-
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .beneficio i{
     width: 55px;
     height: 55px;
-
     border-radius: 50%;
-
     background: var(--color-primary);
     color: var(--color-tertiary);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-size: 22px;
 }
 
 .beneficio h4{
     font-size: 18px;
-
     color: var(--color-text-title);
-
     font-family: var(--font-2);
-
     margin-bottom: 5px;
 }
 
 .beneficio span{
     font-size: 15px;
-
     color: var(--color-text);
-
     font-family: var(--font--body);
     font-weight: bold;
 }
 
 /* DERECHA */
-
 .paneles-medicos{
     flex: 1;
     min-width: 340px;
-
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -501,107 +494,55 @@ nav {
 
 .panel-medico{
     background: var(--color-cards);
-
     border-radius: 20px;
-
     padding: 30px;
-
     box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-
     border: 2px solid var(--color-quaternary);
 }
 
 .panel-medico h3{
     text-align: center;
-
     margin-bottom: 30px;
-
     color: var(--color-text-title);
-
     font-size: 28px;
-
     font-family: var(--font-2);
 }
 
 /* CAMPOS */
-
 .grupo-campo{
     margin-bottom: 22px;
 }
 
 .grupo-campo label{
     display: block;
-
     margin-bottom: 10px;
-
     color: var(--color-text-title);
-
     font-size: 17px;
-
     font-family: var(--font-2);
 }
 
 .campo{
     width: 100%;
-
     background: var(--color-fondo-claro);
-
     border: 2px solid var(--color-quinary);
-
     border-radius: 12px;
-
     padding: 15px 18px;
-
     color: var(--color-text);
-
     font-size: 15px;
-
     font-family: var(--font--body);
     font-weight: bold;
-
     box-sizing: border-box;
 }
 
 .area{
     min-height: 110px;
-
     line-height: 1.7;
 }
 
-@media(max-width: 991px){
 
-    .contenedor-cita{
-        flex-direction: column;
-    }
-    .info-cita{
-        text-align: center;
-    }
 
-    .info-cita p{
-        text-align: center;
-    }
 
-    .beneficio{
-        text-align: left;
-    }
-}
-@media(max-width: 600px){
-    .cita-medica{
-        padding: 70px 20px;
-    }
-    .info-cita h2{
-        font-size: 32px;
-    }
-    .panel-medico h3{
-        font-size: 22px;
-    }
-    .beneficio{
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/*MODULO FARMACIAS*/
+/* ===== MODULO FARMACIAS ===== */
 #recomendacion{
     padding: 100px 10%;
     background: var(--color-fondo-claro);
@@ -609,7 +550,7 @@ nav {
 
 #recomendacion .beneficios{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     margin-bottom: 70px;
 }
@@ -630,13 +571,19 @@ nav {
 }
 
 .etiqueta span{
-    background-color: var(--color-boton);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-boton);
     color: var(--color-boton-2);
-    padding: 12px 100px;
-    border-radius: 30px;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-family: var(--font-nav);
+    font-size: 15px;
     font-weight: bold;
-    font-size: 14px;
+    margin-bottom: 25px;
 }
+
 
 .columna-titulo{
     text-align: center;
@@ -659,7 +606,6 @@ nav {
 
 .columna-texto p{
     font-size: 20px;
-    color: #64748b;
     line-height: 1.7;
 }
 
@@ -685,8 +631,8 @@ nav {
 }
 .buscador-farmacia button{
     border: none;
-    padding: 14px 25px;
-    border-radius: 15px;
+    padding: 10px 45px;
+    border-radius: 35px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -712,7 +658,6 @@ nav {
 }
 
 .beneficio p{
-    color: #64748b;
     line-height: 1.6;
 }
 
@@ -755,7 +700,6 @@ nav {
 }
 
 .galeria article p{
-    color: #64748b;
     line-height: 1.8;
     margin-bottom: 30px;
 }
@@ -786,6 +730,17 @@ nav {
     gap: 20px;
     align-items: center;
 }
+.miembros figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.miembros figure {
+    text-align: center;
+}
+
 #equipo img {
     width:150px;
     height:150px;
@@ -814,6 +769,10 @@ footer {
     color: var(--color-quinary);
     transform: translateY(-2px);
 }
+
+
+
+
 
 
 /*CONFIGURACIÓN PARA DISPOSITIVOS MÓVILES*/
@@ -874,5 +833,123 @@ footer {
     /* EQUIPO */
     .miembros {
         flex-direction: column;
+    }
+}
+
+
+
+/* ========================= */
+/* TABLETS */
+/* ========================= */
+
+@media (max-width: 992px) {
+
+    .bloque-cabecera {
+
+        left: 5%;
+        top: 55%;
+        max-width: 90%;
+    }
+
+    .titulo-frontal {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+
+    .imagen-fondo {
+        border-radius: 35px;
+    }
+}
+
+
+/* ========================= */
+/* CELULARES */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .contenido-texto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .bloque-cabecera {
+        order: 1;
+        position: relative;
+        top: unset;
+        left: unset;
+        transform: none;
+        width: 90%;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 25px;
+        color: var(--color-text-title);
+    }
+    
+    .imagen-fondo {
+        order: 2;
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        border-radius: 25px;
+
+        margin-top: 0;
+    }
+    .titulo-frontal {
+
+        font-size: 2.2rem;
+
+        text-align: center;
+
+        line-height: 1.2;
+    }
+
+    .boton-inicio {
+
+        display: inline-block;
+
+        margin-top: 15px;
+    }
+
+}
+
+
+
+
+ 
+@media(max-width: 991px){
+
+    .contenedor-cita{
+        flex-direction: column;
+    }
+    .info-cita{
+        text-align: center;
+    }
+
+    .info-cita p{
+        text-align: center;
+    }
+
+    .beneficio{
+        text-align: left;
+    }
+}
+@media(max-width: 600px){
+    .cita-medica{
+        padding: 70px 20px;
+    }
+    .info-cita h2{
+        font-size: 32px;
+    }
+    .panel-medico h3{
+        font-size: 22px;
+    }
+    .beneficio{
+        flex-direction: column;
+        text-align: center;
     }
 }
